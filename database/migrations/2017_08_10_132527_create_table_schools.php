@@ -16,11 +16,9 @@ class CreateTableSchools extends Migration
         Schema::create('schools', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('district_id')->nullable()->unsigned();
-            $table->string('district_name')->nullable();
             $table->integer('province_id')->nullable()->unsigned();
-            $table->string('province_name')->nullable();
             $table->integer('city_id')->nullable()->unsigned();
-            $table->string('city_name')->nullable();
+            $table->integer('user_id')->unsigned();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
             $table->string('school_type')->nullable();
