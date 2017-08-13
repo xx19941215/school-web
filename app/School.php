@@ -4,6 +4,7 @@ namespace App;
 use App\Scopes\DraftScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\City;
 
 class School extends Model
 {
@@ -21,11 +22,11 @@ class School extends Model
         'published_at',
     ];
 
-    public static function boot()
-    {
-        parent::boot();
-        static::addGlobalScope(new DraftScope());
-    }
+//    public static function boot()
+//    {
+//        parent::boot();
+//        static::addGlobalScope(new DraftScope());
+//    }
 
     public function user()
     {
@@ -44,6 +45,6 @@ class School extends Model
 
     public function district()
     {
-        return $this->belongsTo(Dis);
+        return $this->belongsTo(District::class);
     }
 }

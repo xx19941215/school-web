@@ -31,11 +31,12 @@ foreach ($conn->conn->query($query) as $row) {
     $schoolMap[$i]['special_admissions'] = $row['special_admissions'];
     $schoolMap[$i]['website'] = $row['website'];
     $schoolMap[$i]['content'] = $row['content'];
-    $schoolMap[$i]['published_at'] = $conn->microDate();
-    $schoolMap[$i]['created_at'] = $conn->microDate();
-    $schoolMap[$i]['updated_at'] = $conn->microDate();
+    // $schoolMap[$i]['published_at'] = $conn->microDate();
+    // $schoolMap[$i]['created_at'] = $conn->microDate();
+    // $schoolMap[$i]['updated_at'] = $conn->microDate();
     $i++;
 }
+
 
 $conn->pushDataToTable($conn->conn, $schoolMap, 'schools');
 

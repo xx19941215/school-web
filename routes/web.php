@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/', 'ProvinceController@index')->name('province.index');
+Route::group(['prefix' => 'province'], function() {
+	Route::get('{id}', 'ProvinceController@show')->name('province.show');
+});
+
+Route::group(['prefix' => 'city'], function() {
+	Route::get('{id}', 'CityController@show')->name('city.show');
+});
+
+Route::group(['prefix' => 'school'], function() {
+	Route::get('{id}', 'SchoolController@show')->name('school.show');
+});

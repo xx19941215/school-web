@@ -24,7 +24,8 @@ class Util
             $keys .= ', ' . $k;
         }
         $keys = trim(substr($keys, 1));
-        unset($k);
+        $k = '';
+        $conn->beginTransaction();
         foreach ($data as $k => $res) {
             foreach ($res as $k => $r) {
                 $values .= ", '" . $r . "'";
@@ -33,8 +34,9 @@ class Util
             $sql = "INSERT INTO $table ($keys) values ($values);";
             print_r($sql . "\n");
             $conn->exec($sql);
-            unset($values);
+            $values = '';
         }
+        $conn->commit();
     }
 
     public function microDate($time = null)

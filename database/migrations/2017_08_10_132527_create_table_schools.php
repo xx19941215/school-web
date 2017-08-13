@@ -14,10 +14,10 @@ class CreateTableSchools extends Migration
     public function up()
     {
         Schema::create('schools', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('district_id')->nullable()->unsigned();
-            $table->integer('province_id')->nullable()->unsigned();
-            $table->integer('city_id')->nullable()->unsigned();
+            $table->string('id');
+            $table->string('district_id')->nullable();
+            $table->string('province_id')->nullable();
+            $table->string('city_id')->nullable();
             $table->integer('user_id')->unsigned();
             $table->string('name')->nullable();
             $table->string('slug')->nullable();
