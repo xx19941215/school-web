@@ -16,8 +16,11 @@ class CityController extends Controller
     public function show(Request $request)
     {
     	$city = $this->city->getById($request->id);
+
     	$schools = $city->schools;
 
-    	return view('city.show', compact('city', 'schools'));
+        $paginator = $this->paginate($schools);
+
+    	return view('city.show', compact('city', 'schools', 'paginator'));
     }
 }

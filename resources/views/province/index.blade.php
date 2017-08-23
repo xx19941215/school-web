@@ -5,7 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <ol class="breadcrumb">
+                    <li><a href="{{ url('/') }}">中学大全</a></li>
+                </ol>
                 <div class="panel-body">
                     @foreach($provinces as $province)
                     <div class="">
@@ -13,7 +15,7 @@
                         <a href="{{ route('province.show', [$province->id]) }}">{{ $province->name }}</a>
                         </p>
                         @foreach($province->cities as $city)
-                        <spam>
+                        <span>
                         <a href="{{ route('city.show', [$city->id]) }}">{{ $city->name }}</a>
                         </span>
                         @endforeach
