@@ -19,7 +19,9 @@
                     </div>
                     @endforeach
                 </div>
-                {!! $paginator->links() !!}
+                <div class="">
+                        {!! $paginator->links() !!}
+                </div>
             </div>
         </div>
     </div>
