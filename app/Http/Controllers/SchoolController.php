@@ -17,6 +17,13 @@ class SchoolController extends Controller
     {
         $school = $this->school->getById($request->id);
 
-        return view('school.show', compact('school'));
+        $school->increment('view_count', 1);
+
+        $nearBySchools = $school->city->schools()
+                        ->orderBy(\DB::raw('RAND()'))
+                        ->take(10)
+                        ->get();
+
+        return view('school.show', compact('school', 'nearBySchools'));
     }
 }

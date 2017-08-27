@@ -47,4 +47,9 @@ class School extends Model
     {
         return $this->belongsTo(District::class);
     }
+
+    public function scopeHot($query)
+    {
+        return $query->orderBy('view_count', 'desc');
+    }
 }

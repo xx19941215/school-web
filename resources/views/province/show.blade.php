@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title'){{ $province->name }}重点中学排名_{{ $province->name }}民办中学排名@stop
 @section('content')
 <div class="container">
     <div class="row">
