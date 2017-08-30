@@ -22,6 +22,7 @@
                             ， 住宿方式可以选择{{ empty($school->accommodation) ? '寄宿' : $school->accommodation}}。{{ $school->name . config('school.random')[array_rand(config('school.random'))] }} 学校建立时间{{ empty($school->establishment_year) ? '比较模糊' : $school->establishment_year }}， 你可以选择{{ empty($school->entrance_way) ? '考试' : $school->entrance_way }}进入
                             {{ $school->name}}学习。{{ $school->name . config('school.random')[array_rand(config('school.random'))] }} 假如你想进入这所学校的话， 你可以 拨打 {{ empty($school->tel) ? '号码百事通' : $school->tel}} 询问一下相关的信息。对了，{{ $school->name}}有{{ empty($school->test_type) ? '期末考试' : $school->entrance_way }}，学校地址{{ empty($school->addr) ? '你可以使用百度搜索一下' : $school->addr }}
                             学校网站{{ empty($school->website) ? '暂无' : $school->website }}。
+
                         </p>
                     </section>
                     <section>
