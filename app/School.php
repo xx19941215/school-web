@@ -22,11 +22,11 @@ class School extends Model
         'published_at',
     ];
 
-//    public static function boot()
-//    {
-//        parent::boot();
-//        static::addGlobalScope(new DraftScope());
-//    }
+    public static function boot()
+    {
+        parent::boot();
+        static::addGlobalScope(new DraftScope());
+    }
 
     public function user()
     {
