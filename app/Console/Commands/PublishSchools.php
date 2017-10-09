@@ -50,7 +50,7 @@ class PublishSchools extends Command
                     ->take(50)
                     ->get();
         foreach ($schools as $school) {
-            School::where('id', $school->id)
+            $num = School::withoutGlobalScope(new DraftScope())->where('id', '=', $school->id)
                     ->update([
                         'is_draft' => 0
                     ]);
